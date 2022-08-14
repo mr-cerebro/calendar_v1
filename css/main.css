@@ -82,3 +82,7 @@ h2 {
     background: rgba(0, 173, 223, .8);
     color: #f9fff9;
 }
+
+.calendario tbody .dia_atual {
+    background: #00addf;
+}
