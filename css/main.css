@@ -3,6 +3,10 @@
     margin: 0;
 }
 
+body {
+    background: #f1f1f1;
+}
+
 .conteudo{
     left: 50%;
     margin: 0 0 0 -250px;
@@ -11,8 +15,39 @@
     background: #f00;
 }
 
+.conteudo header {
+    position: relative;
+}
+
 h2 {
     margin-top: 20px;
     font-size: 32px;
     text-transform: uppercase;
+}
+
+.btn_ant, .btn_prox {
+    position: absolute;
+    top: 50%;
+    height: 32px;
+    width: 32px;
+    line-height: 32px;
+    margin-top: -16px;
+    border: 2px solid #cbd1d2;
+    border-radius: 50%;
+    color: #cbd1d2;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn_ant {
+    left: 80px;
+}
+
+.btn_prox {
+    right: 80px;
+}
+
+.btn_ant:hover, .btn_prox:hover {
+    background: #cbd1d2;
+    color: #f9fff9;
 }
