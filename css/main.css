@@ -73,3 +73,12 @@ h2 {
     width: 71.4px;
     text-align: center;
 }
+
+.calendario tbody td {
+    cursor: pointer;
+}
+
+.calendario tbody td:hover {
+    background: rgba(0, 173, 223, .8);
+    color: #f9fff9;
+}
