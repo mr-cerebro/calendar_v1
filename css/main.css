@@ -54,6 +54,7 @@ h2 {
 .btn_ant:hover, .btn_prox:hover {
     background: #cbd1d2;
     color: #f9fff9;
+    cursor: pointer;
 }
 
 .calendario table {
