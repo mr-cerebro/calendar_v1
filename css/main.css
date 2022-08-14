@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: 'Lato', sans-serif;
 }
 
 body {
@@ -15,7 +16,11 @@ body {
     background: #f00;
 }
 
-.conteudo header {
+.calendario {
+    text-align: center;
+}
+
+.conteudo .calendario header {
     position: relative;
 }
 
