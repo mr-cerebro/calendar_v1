@@ -3,5 +3,5 @@ document.addEventListener('DOMContentLoaded', function () {
     function GetDaysCalendar(mes, ano) {
         document.getElementById('mes').innerHTML = monthsPT[mes]
     }
-    GetDaysCalendar(1, 2000)
+    GetDaysCalendar(7, 2000)
 })
