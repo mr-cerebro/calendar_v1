@@ -13,7 +13,6 @@ body {
     margin: 0 0 0 -250px;
     position: absolute;
     width: 500px;
-    background: #f00;
 }
 
 .calendario {
@@ -55,4 +54,22 @@ h2 {
 .btn_ant:hover, .btn_prox:hover {
     background: #cbd1d2;
     color: #f9fff9;
+}
+
+.calendario table {
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.calendario thead {
+    background: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.calendario td {
+    border: 1px solid #cbd1d2;
+    height: 71.4px;
+    width: 71.4px;
+    text-align: center;
 }
