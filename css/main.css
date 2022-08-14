@@ -86,3 +86,11 @@ h2 {
 .calendario tbody .dia_atual {
     background: #00addf;
 }
+
+.calendario .mes_anterior, .calendario .prox_mes {
+    color: #cbd1d2;
+}
+
+.calendario .mes_anterior:hover, .calendario .prox_mes:hover {
+    background: #98a0a0;
+}
