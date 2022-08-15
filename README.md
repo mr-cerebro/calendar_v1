@@ -48,7 +48,7 @@ Here are some ideas about me to get you started:
 
 <div align="center">
 
-## Project: COLORS GAME RGB
+## Project: CALENDÁRIO PERSONALIZADO
 
 </div>
 
