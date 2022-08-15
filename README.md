@@ -17,7 +17,7 @@ Aqui estão algumas idéias sobre mim para você começar:
 
 </div>
 
-![image-card](img/image-card.gif)
+![image-card](img/image-card.jpg)
 
 ## Visualizar o projecto
 
