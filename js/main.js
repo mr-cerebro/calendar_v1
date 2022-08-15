@@ -5,8 +5,54 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('mes').innerHTML = monthsPT[mes]
         document.getElementById('ano').innerHTML = ano
 
-        let firstDayOfWeek = new Date(mes, ano, 1).getDay() - 1 
-        let getLastDayThisMonth = new Date(mes, ano + 1, 0).getDay()
+        let firstDayOfWeek = new Date(ano, mes, 1).getDay() - 1 
+        let getLastDayThisMonth = new Date(ano, mes + 1, 0).getDate()
+
+        for(var i = -firstDayOfWeek, index = 0; i < (42 - firstDayOfWeek); i++, index++){
+            let dt = new Date(ano, mes, i)
+            let dtNow = new Date()
+            var dayTable = tableDays.getElementsByTagName('td')[index]
+            dayTable.classList.remove('mes_anterior')
+            dayTable.classList.remove('prox_mes')
+            dayTable.innerHTML = dt.getDate()
+
+            if(dt.getFullYear() == dtNow.getFullYear() && dt.getMonth() == dtNow.getMonth() && dt.getDate() == dtNow.getDate()) {
+                dayTable.classList.add('dia_atual')
+            }
+
+            if(i > 1) {
+                dayTable.classList.add('mes_anterior')
+            }
+
+            if(i < getLastDayThisMonth) {
+                dayTable.classList.add('prox_mes')
+            }
+        }
     }
-    GetDaysCalendar(7, 2000)
+
+    let now = new Date()
+    let mes = now.getMonth()
+    let ano = now.getFullYear()
+    GetDaysCalendar(mes, ano)
+
+    const botao_prox = document.getElementById('btn_prev')
+    const botao_ant = document.getElementById('btn_next')
+
+    botao_prox.onclick = function() {
+        mes++
+        if(mes > 11) {
+            mes = 0
+            ano++
+        }
+        GetDaysCalendar(mes, ano)
+    }
+
+    botao_ant.onclick = function() {
+        mes--
+        if (mes < 0) {
+            mes = 11
+            ano--
+        }
+        GetDaysCalendar(mes, ano)
+    }
 })
