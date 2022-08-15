@@ -1,30 +1,32 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function(){
     const monthsPT = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro']
     const tableDays = document.getElementById('dias')
+
     function GetDaysCalendar(mes, ano) {
         document.getElementById('mes').innerHTML = monthsPT[mes]
         document.getElementById('ano').innerHTML = ano
 
-        let firstDayOfWeek = new Date(ano, mes, 1).getDay() - 1 
+        let firstDayOfWeek = new Date(ano, mes, 1).getDay() - 1
         let getLastDayThisMonth = new Date(ano, mes + 1, 0).getDate()
-
-        for(var i = -firstDayOfWeek, index = 0; i < (42 - firstDayOfWeek); i++, index++){
-            let dt = new Date(ano, mes, i)
+        
+        for(var i = -firstDayOfWeek, index = 0; i < (42-firstDayOfWeek); i++,index++) {
+            let dt = new Date(ano,mes,i);
             let dtNow = new Date()
-            var dayTable = tableDays.getElementsByTagName('td')[index]
+            let dayTable = tableDays.getElementsByTagName('td')[index]
             dayTable.classList.remove('mes_anterior')
             dayTable.classList.remove('prox_mes')
+            dayTable.classList.remove('dia_atual')
             dayTable.innerHTML = dt.getDate()
 
             if(dt.getFullYear() == dtNow.getFullYear() && dt.getMonth() == dtNow.getMonth() && dt.getDate() == dtNow.getDate()) {
                 dayTable.classList.add('dia_atual')
             }
 
-            if(i > 1) {
+            if(i < 1) {
                 dayTable.classList.add('mes_anterior')
             }
 
-            if(i < getLastDayThisMonth) {
+            if( i > getLastDayThisMonth) {
                 dayTable.classList.add('prox_mes')
             }
         }
@@ -35,10 +37,10 @@ document.addEventListener('DOMContentLoaded', function () {
     let ano = now.getFullYear()
     GetDaysCalendar(mes, ano)
 
-    const botao_prox = document.getElementById('btn_prev')
-    const botao_ant = document.getElementById('btn_next')
+    const botao_proximo = document.getElementById('btn_next')
+    const botao_anterior = document.getElementById('btn_prev')
 
-    botao_prox.onclick = function() {
+    botao_proximo.onclick = function(){
         mes++
         if(mes > 11) {
             mes = 0
@@ -47,9 +49,9 @@ document.addEventListener('DOMContentLoaded', function () {
         GetDaysCalendar(mes, ano)
     }
 
-    botao_ant.onclick = function() {
+    botao_anterior.onclick = function(){
         mes--
-        if (mes < 0) {
+        if(mes < 0) {
             mes = 11
             ano--
         }
